@@ -5,9 +5,16 @@ import "fmt"
 type deck []string
 
 func (d deck) print(){
+	fmt.Println("Printing Deck with length", len(d))
 	for i, card := range d {
 		fmt.Println(i, card)
 	}
+}
+
+func deal(d deck, num int) (deck, deck){
+	handDeck := d[:num]
+	remainingDeck := d[num:]
+	return handDeck, remainingDeck
 }
 
 func newDeck() deck{
