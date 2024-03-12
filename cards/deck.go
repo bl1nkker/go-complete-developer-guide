@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"strings"
 )
 
@@ -38,4 +39,19 @@ func (d deck) toString() string{
 	var result string
 	result = strings.Join([]string(d), ",")
 	return result
+}
+
+func (d deck) saveToFile(filename string) error {
+	data := []byte(d.toString())
+	res := os.WriteFile(filename, data, 0666)
+	return res
+}
+
+func newDeckFromFile(filename string) deck{
+	bs, err := os.ReadFile(filename)
+	if err != nil{
+		fmt.Println("Error:", err)
+		os.Exit(1)
+	}
+	return deck(strings.Split(string(bs), ","))
 }

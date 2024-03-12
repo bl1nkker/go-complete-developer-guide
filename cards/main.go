@@ -5,5 +5,7 @@ func main() {
 	hand, cards := deal(cards, 5)
 	hand.print()
 	cards.print()
-
+	cards.saveToFile("cards.txt")
+	newD := newDeckFromFile("cards.txt")
+	newD.print()
 }
