@@ -1,4 +1,4 @@
-package main
+package cards
 
 import (
 	"fmt"
@@ -7,23 +7,23 @@ import (
 	"strings"
 )
 
-type deck []string
+type Deck []string
 
-func (d deck) print(){
+func (d Deck) Print(){
 	fmt.Println("Printing Deck with length", len(d))
 	for i, card := range d {
 		fmt.Println(i, card)
 	}
 }
 
-func deal(d deck, num int) (deck, deck){
+func Deal(d Deck, num int) (Deck, Deck){
 	handDeck := d[:num]
 	remainingDeck := d[num:]
 	return handDeck, remainingDeck
 }
 
-func newDeck() deck{
-	cards := deck{}
+func NewDeck() Deck{
+	cards := Deck{}
 	cardSuits := []string{"Spades", "Hearts", "Diamonds", "Clubs"}
 	cardValues := []string{"One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Ace"}
 	var newCard string
@@ -36,28 +36,27 @@ func newDeck() deck{
 	return cards
 }
 
-func (d deck) toString() string{
-	var result string
-	result = strings.Join([]string(d), ",")
+func (d Deck) ToString() string{
+	result := strings.Join([]string(d), ",")
 	return result
 }
 
-func (d deck) saveToFile(filename string) error {
-	data := []byte(d.toString())
+func (d Deck) SaveToFile(filename string) error {
+	data := []byte(d.ToString())
 	res := os.WriteFile(filename, data, 0666)
 	return res
 }
 
-func newDeckFromFile(filename string) deck{
+func NewDeckFromFile(filename string) Deck{
 	bs, err := os.ReadFile(filename)
 	if err != nil{
 		fmt.Println("Error:", err)
 		os.Exit(1)
 	}
-	return deck(strings.Split(string(bs), ","))
+	return Deck(strings.Split(string(bs), ","))
 }
 
-func (d deck) shuffle() {
+func (d Deck) Shuffle() {
 	for i := range d{
 		newPos := rand.Intn(len(d) - 1)
 		d[i], d[newPos] = d[newPos], d[i]

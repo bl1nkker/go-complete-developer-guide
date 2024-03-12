@@ -1,5 +1,5 @@
-work:
-	go work init ./helloworld ./cards
+run:
+	go run main.go
 
-cards:
-	go run ./cards
+test:
+	go test
