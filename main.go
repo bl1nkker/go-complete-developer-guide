@@ -10,7 +10,8 @@ import (
 func main() {
 	// runCards()
 	// runStructs()
-	runPointers()
+	// runPointers()
+	pointersGotcha()
 }
 
 func runCards(){
@@ -26,26 +27,6 @@ func runCards(){
 	deck.Print()
 	deck.Shuffle()
 	deck.Print()
-}
-
-func runPointers(){
-	var x, y int;
-	fmt.Println(x == 0, x == y) // true true
-	fmt.Println(&x == &y) // false
-	fmt.Printf("x is %T, pointerX is %T\n", x, &x) // x is int, pointerX is *int
-
-	var p *int // p is type of pointer of int
-	fmt.Println(p == nil) // true
-
-	p = &x
-	fmt.Println(p, p == &x, x == *p) // <p_address> true true
-	fmt.Printf("p is %T, pointerP is %T\n", p, &p) // p is *int, pointerP is **int
-
-	var q **int
-	fmt.Println(q == nil) // true
-	q = &p
-	fmt.Println(q, q == &p, p == *q) // <q_address> true true
-	fmt.Printf("q is %T, pointerQ is %T\n", q, &q) // q is **int, pointerQ is ***int
 }
 
 func runStructs(){
@@ -69,4 +50,35 @@ func runStructs(){
 	jim.UpdateName("Fuck")
 	jim.Print()
 	
+}
+
+func runPointers(){
+	var x, y int;
+	fmt.Println(x == 0, x == y) // true true
+	fmt.Println(&x == &y) // false
+	fmt.Printf("x is %T, pointerX is %T\n", x, &x) // x is int, pointerX is *int
+
+	var p *int // p is type of pointer of int
+	fmt.Println(p == nil) // true
+
+	p = &x
+	fmt.Println(p, p == &x, x == *p) // <p_address> true true
+	fmt.Printf("p is %T, pointerP is %T\n", p, &p) // p is *int, pointerP is **int
+
+	var q **int
+	fmt.Println(q == nil) // true
+	q = &p
+	fmt.Println(q, q == &p, p == *q) // <q_address> true true
+	fmt.Printf("q is %T, pointerQ is %T\n", q, &q) // q is **int, pointerQ is ***int
+}
+
+func updateSlice(s []string) {
+	s[0] = "Fuck the"
+}
+
+func pointersGotcha(){
+	slice := []string{"Hello", "World", "asdadawdasdsa"}
+	fmt.Println("Before:", slice)
+	updateSlice(slice)
+	fmt.Println("After:", slice)
 }
