@@ -10,8 +10,8 @@ import (
 func main() {
 	// runCards()
 	// runStructs()
-	// runPointers()
-	pointersGotcha()
+	runPointers()
+	// pointersGotcha()
 }
 
 func runCards(){
@@ -52,6 +52,10 @@ func runStructs(){
 	
 }
 
+func printPointer(name *string){
+	fmt.Println(&name)
+}
+
 func runPointers(){
 	var x, y int;
 	fmt.Println(x == 0, x == y) // true true
@@ -70,6 +74,16 @@ func runPointers(){
 	q = &p
 	fmt.Println(q, q == &p, p == *q) // <q_address> true true
 	fmt.Printf("q is %T, pointerQ is %T\n", q, &q) // q is **int, pointerQ is ***int
+
+	i, j := 1, 1
+	fmt.Printf("i is %v, j is %v\n", &i, &j)
+
+	name := "Bill"
+	namePointer := &name
+
+	fmt.Println(&namePointer)
+	printPointer(namePointer)
+
 }
 
 func updateSlice(s []string) {
