@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"go-complete-developer-guide/cards"
 	"go-complete-developer-guide/structs"
 )
@@ -30,8 +29,19 @@ func runCards(){
 func runStructs(){
 	// alex := structs.Person{FirstName: "Alex", LastName: "Anderson"}
 	var alex structs.Person
+	alexContact := structs.ContactInfo{Email: "alex@gmail.com", Number: "111333"}
 	alex.FirstName = "Alex"
 	alex.LastName = "Anderson"
-	fmt.Println(alex)
-	fmt.Printf("%+v", alex)
+	alex.Contact = alexContact
+	alex.Print()
+
+	jim := structs.Person{
+		FirstName: "Jim",
+		LastName: "Fatherbeard",
+		Contact: structs.ContactInfo{
+			Email: "jim@gmail.com",
+			Number: "228337",
+		},
+	}
+	jim.Print()
 }
