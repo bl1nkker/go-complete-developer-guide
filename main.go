@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"go-complete-developer-guide/cards"
 	"go-complete-developer-guide/structs"
 )
@@ -27,6 +28,7 @@ func runCards(){
 }
 
 func runStructs(){
+	fmt.Println("Structs module")
 	// alex := structs.Person{FirstName: "Alex", LastName: "Anderson"}
 	var alex structs.Person
 	alexContact := structs.ContactInfo{Email: "alex@gmail.com", Number: "111333"}
@@ -45,4 +47,5 @@ func runStructs(){
 	}
 	jim.UpdateName("Fuck")
 	jim.Print()
+	
 }

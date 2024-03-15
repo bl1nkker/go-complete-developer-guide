@@ -17,6 +17,9 @@ func (p Person) Print(){
 	fmt.Printf("%+v\n", p)
 }
 
+
+// !Go is pass by value language.
 func (p *Person) UpdateName(newName string){
+	fmt.Println("Pointer", p)
 	p.FirstName = newName
 }
