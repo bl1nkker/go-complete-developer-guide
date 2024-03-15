@@ -52,8 +52,9 @@ func runStructs(){
 	
 }
 
-func printPointer(name *string){
-	fmt.Println(&name)
+func printPointer(namePointer *string) {
+    fmt.Println("C: ", namePointer) // C:  0xc0000101b0   --> value  (Go copy it from A)
+    fmt.Println("D: ", &namePointer) // D:  0xc00007c018   --> address of C
 }
 
 func runPointers(){
@@ -81,9 +82,9 @@ func runPointers(){
 	name := "Bill"
 	namePointer := &name
 
-	fmt.Println(&namePointer)
-	printPointer(namePointer)
-
+    fmt.Println("A: ", namePointer) // A:  0xc0000101b0   --> value
+    fmt.Println("B: ", &namePointer) // B:  0xc00000e018   --> address of A
+    printPointer(namePointer)	
 }
 
 func updateSlice(s []string) {
