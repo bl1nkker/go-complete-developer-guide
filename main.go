@@ -32,16 +32,17 @@ func runStructs(){
 	alexContact := structs.ContactInfo{Email: "alex@gmail.com", Number: "111333"}
 	alex.FirstName = "Alex"
 	alex.LastName = "Anderson"
-	alex.Contact = alexContact
+	alex.ContactInfo = alexContact
 	alex.Print()
 
 	jim := structs.Person{
 		FirstName: "Jim",
 		LastName: "Fatherbeard",
-		Contact: structs.ContactInfo{
+		ContactInfo: structs.ContactInfo{
 			Email: "jim@gmail.com",
 			Number: "228337",
 		},
 	}
+	jim.UpdateName("Fuck")
 	jim.Print()
 }

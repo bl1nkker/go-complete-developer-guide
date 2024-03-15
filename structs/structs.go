@@ -1,4 +1,5 @@
 package structs
+
 import "fmt"
 
 type ContactInfo struct{
@@ -8,10 +9,14 @@ type ContactInfo struct{
 type Person struct{
 	FirstName string
 	LastName string
-	Contact ContactInfo
+	ContactInfo
 }
 
-func (p *Person) Print(){
+func (p Person) Print(){
 	fmt.Println("Printing person...")
 	fmt.Printf("%+v\n", p)
+}
+
+func (p *Person) UpdateName(newName string){
+	p.FirstName = newName
 }
