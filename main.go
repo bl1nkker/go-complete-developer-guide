@@ -101,6 +101,8 @@ func pointersGotcha(){
 }
 
 func runColors() {
-	color := maps.GetColor()
-	fmt.Println(color)
+	colors := maps.GetColors()
+	fmt.Println(colors)
+	maps.DeleteItem(colors, "white")
+	fmt.Println(colors)
 }
