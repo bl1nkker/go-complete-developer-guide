@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"go-complete-developer-guide/cards"
+	"go-complete-developer-guide/maps"
 	"go-complete-developer-guide/structs"
 )
 
@@ -10,8 +11,9 @@ import (
 func main() {
 	// runCards()
 	// runStructs()
-	runPointers()
+	// runPointers()
 	// pointersGotcha()
+	runColors()
 }
 
 func runCards(){
@@ -96,4 +98,9 @@ func pointersGotcha(){
 	fmt.Println("Before:", slice)
 	updateSlice(slice)
 	fmt.Println("After:", slice)
+}
+
+func runColors() {
+	color := maps.GetColor()
+	fmt.Println(color)
 }
