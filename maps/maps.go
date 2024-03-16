@@ -1,5 +1,7 @@
 package maps
 
+import "fmt"
+
 func GetColors() map[string]string{
 	// Declaration 1
 	colors1 := map[string]string{
@@ -20,4 +22,11 @@ func GetColors() map[string]string{
 
 func DeleteItem(m map[string]string, key string){
 	delete(m, key)
+}
+
+func PrintColor(m map[string]string){
+	fmt.Println("Printing colors for:", &m)
+	for color, hex := range m{
+		fmt.Printf("The color is %s. And the hex is %s\n", color, hex)
+	}
 }
