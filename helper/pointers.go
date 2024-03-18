@@ -42,7 +42,7 @@ func updateSlice(s []string) {
 	s[0] = "Fuck the"
 }
 
-func PointersGotcha(){
+func RunExtra(){
 	slice := []string{"Hello", "World", "asdadawdasdsa"}
 	fmt.Println("Before:", slice)
 	updateSlice(slice)

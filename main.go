@@ -12,7 +12,7 @@ func main() {
 	cards.Run()
 	structs.Run()
 	helper.Run()
-	helper.PointersGotcha()
+	helper.RunExtra()
 	maps.Run()
 	interfaces.Run()
 	interfaces.RunHttp()
