@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"go-complete-developer-guide/cards"
+	"go-complete-developer-guide/interfaces"
 	"go-complete-developer-guide/maps"
 	"go-complete-developer-guide/structs"
 )
@@ -13,7 +14,8 @@ func main() {
 	// runStructs()
 	// runPointers()
 	// pointersGotcha()
-	runColors()
+	// runColors()
+	runInterfaces()
 }
 
 func runCards(){
@@ -105,4 +107,12 @@ func runColors() {
 	maps.PrintColor(colors)
 	maps.DeleteItem(colors, "white")
 	maps.PrintColor(colors)
+}
+
+func runInterfaces(){
+	eb := interfaces.EnglishBot{}
+	jb := interfaces.JapaneseBot{}
+	interfaces.PrintGreeting(eb)
+	interfaces.PrintGreeting(jb)
+
 }
