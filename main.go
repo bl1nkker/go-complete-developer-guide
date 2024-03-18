@@ -16,4 +16,5 @@ func main() {
 	maps.Run()
 	interfaces.Run()
 	interfaces.RunHttp()
+	interfaces.RunAssignment1()
 }
