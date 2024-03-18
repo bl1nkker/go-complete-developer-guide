@@ -112,7 +112,8 @@ func runColors() {
 func runInterfaces(){
 	eb := interfaces.EnglishBot{}
 	jb := interfaces.JapaneseBot{}
+	fb := interfaces.FrenchBot{}
 	interfaces.PrintGreeting(eb)
 	interfaces.PrintGreeting(jb)
-
+	interfaces.PrintGreeting(fb)
 }

@@ -12,6 +12,7 @@ func PrintGreeting(b bot){
 
 type EnglishBot struct{}
 type JapaneseBot struct{}
+type FrenchBot struct{}
 
 func (eb EnglishBot) GetGreeting() string{
 	return "Hello!"
@@ -19,4 +20,8 @@ func (eb EnglishBot) GetGreeting() string{
 
 func (jb JapaneseBot) GetGreeting() string{
 	return "Arigato!"
+}
+
+func (fb FrenchBot) GetGreeting() string {
+    return "Bonjour!"
 }
