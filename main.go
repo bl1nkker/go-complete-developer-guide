@@ -15,6 +15,7 @@ func main() {
 	helper.RunExtra()
 	maps.Run()
 	interfaces.Run()
-	interfaces.RunHttp()
+	// interfaces.RunHttp()
 	interfaces.RunAssignment1()
+	interfaces.RunAssignment2()
 }
