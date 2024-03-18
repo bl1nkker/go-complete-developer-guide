@@ -30,3 +30,10 @@ func PrintColor(m map[string]string){
 		fmt.Printf("The color is %s. And the hex is %s\n", color, hex)
 	}
 }
+
+func Run() {
+	colors := GetColors()
+	PrintColor(colors)
+	DeleteItem(colors, "white")
+	PrintColor(colors)
+}

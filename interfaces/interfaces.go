@@ -25,3 +25,12 @@ func (jb JapaneseBot) GetGreeting() string{
 func (fb FrenchBot) GetGreeting() string {
     return "Bonjour!"
 }
+
+func Run(){
+	eb := EnglishBot{}
+	jb := JapaneseBot{}
+	fb := FrenchBot{}
+	PrintGreeting(eb)
+	PrintGreeting(jb)
+	PrintGreeting(fb)
+}

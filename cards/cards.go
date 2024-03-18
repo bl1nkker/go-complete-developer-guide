@@ -62,3 +62,18 @@ func (d Deck) Shuffle() {
 		d[i], d[newPos] = d[newPos], d[i]
 	}
 }
+
+func Run(){
+	deck := NewDeck()
+	_, deck = Deal(deck, 5)
+
+	// I/O
+	deck.SaveToFile("cards.txt")
+	newD := NewDeckFromFile("cards.txt")
+	newD.Print()
+
+	// Shuffle
+	deck.Print()
+	deck.Shuffle()
+	deck.Print()
+}
