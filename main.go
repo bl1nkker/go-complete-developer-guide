@@ -17,7 +17,7 @@ func main() {
 	maps.Run()
 	interfaces.Run()
 	// interfaces.RunHttp()
-	interfaces.RunAssignment1()
-	interfaces.RunAssignment2()
+	// interfaces.RunAssignment1()
+	// interfaces.RunAssignment2()
 	channels.RunChannels()
 }
