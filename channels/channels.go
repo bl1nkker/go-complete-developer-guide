@@ -23,8 +23,8 @@ func RunChannels(){
 	// Blocking Line of code. The program will listen the channel until it receives some messages
 	fmt.Println(<- c)
 
-	for {
-		go checkLink(<- c, c)
+	for l := range c{
+		go checkLink(l, c)
 	}
 }
 
