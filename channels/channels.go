@@ -12,18 +12,24 @@ func RunChannels(){
 		"http://facebook.com",
 		"http://amazon.com",
 	}
+
+	// Create channel to communicate between goroutines
+	c := make(chan string)
+
 	for _, link := range links{
-		// HTTP Request
-		checkLink(link)
+		// HTTP Request. Create Goroutine (thread)
+		go checkLink(link, c)
 	}
+	fmt.Println(<- c)
 }
 
-func checkLink(link string) bool{
+func checkLink(link string, c chan string){
 	_, err := http.Get(link)
 	if err != nil{
 		fmt.Println("Link might be down:", link)
-		return false
+		c <- "Might be down, i think"
+		return
 	}
 	fmt.Println("Link is up:", link)
-	return true
+	c <- "Yep, it is up"	
 }
