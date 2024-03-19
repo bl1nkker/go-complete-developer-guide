@@ -20,16 +20,22 @@ func RunChannels(){
 		// HTTP Request. Create Goroutine (thread)
 		go checkLink(link, c)
 	}
+	// Blocking Line of code. The program will listen the channel until it receives some messages
 	fmt.Println(<- c)
+
+	for {
+		go checkLink(<- c, c)
+	}
 }
 
 func checkLink(link string, c chan string){
+	// Blocking Line of code
 	_, err := http.Get(link)
 	if err != nil{
 		fmt.Println("Link might be down:", link)
-		c <- "Might be down, i think"
+		c <- link
 		return
 	}
 	fmt.Println("Link is up:", link)
-	c <- "Yep, it is up"	
+	c <- link
 }
