@@ -2,6 +2,7 @@ package main
 
 import (
 	"go-complete-developer-guide/cards"
+	"go-complete-developer-guide/channels"
 	"go-complete-developer-guide/helper"
 	"go-complete-developer-guide/interfaces"
 	"go-complete-developer-guide/maps"
@@ -18,4 +19,5 @@ func main() {
 	// interfaces.RunHttp()
 	interfaces.RunAssignment1()
 	interfaces.RunAssignment2()
+	channels.RunChannels()
 }
