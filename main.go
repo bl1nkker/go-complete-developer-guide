@@ -7,9 +7,11 @@ import (
 	"go-complete-developer-guide/interfaces"
 	"go-complete-developer-guide/maps"
 	"go-complete-developer-guide/structs"
+	// "runtime"
 )
 
 func main() {
+	// runtime.GOMAXPROCS(1)
 	cards.Run()
 	structs.Run()
 	helper.Run()
