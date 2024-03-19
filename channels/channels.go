@@ -3,6 +3,7 @@ package channels
 import (
 	"fmt"
 	"net/http"
+	"time"
 )
 
 func RunChannels(){
@@ -24,8 +25,19 @@ func RunChannels(){
 	fmt.Println(<- c)
 
 	for l := range c{
-		go checkLink(l, c)
+		// Function Literal. It is the same as having "go FunctionLiteralAlternative"
+		go func(link string) {
+			time.Sleep(5 * time.Second)
+			checkLink(link, c)
+		}(l)
+
+		// go some(l, c)
 	}
+}
+
+func FunctionLiteralAlternative(l string, c chan string){
+	time.Sleep(5 * time.Second)
+	checkLink(l, c)
 }
 
 func checkLink(link string, c chan string){
